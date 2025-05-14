@@ -1,0 +1,15 @@
+import mill._
+import mill.scalalib._
+import mill.scalalib.publish._
+import mill.scalajslib._
+import mill.scalajslib.api._
+
+object sjs extends ScalaJSModule  {
+  override def scalaVersion = "3.7.0-RC4"
+  def scalaJSVersion = "1.19.0"
+  def ivyDeps = super.ivyDeps() ++
+    Agg(
+      ivy"com.lihaoyi::upickle:4.1.0",
+      ivy"org.scala-js::scalajs-java-securerandom::1.0.0".withDottyCompat(scalaVersion())
+    )
+}
