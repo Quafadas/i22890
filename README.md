@@ -4,6 +4,9 @@ Seeks to reproduce
 https://github.com/scala/scala3/issues/22890
 
 ```sh
+./mill clean
+
+
 ./mill _.compile
 
 ./mill show _.compileClasspath
